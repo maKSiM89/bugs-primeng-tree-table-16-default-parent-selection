@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TreeTableNode } from 'primeng/api';
 import { FILES } from './const/files.const';
-import { TreeTable } from 'primeng/treetable';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +8,7 @@ import { TreeTable } from 'primeng/treetable';
 })
 export class AppComponent implements OnInit {
   selectedNodes: TreeTableNode | TreeTableNode[] | null = [];
-  selectedAccountsIds = [1,2,3,4,5,6];
+  selectedAccountsIds = [1, 2, 3, 4, 5, 6];
   filterValue: string = '';
   readonly files = FILES;
 
@@ -30,10 +29,6 @@ export class AppComponent implements OnInit {
         }
       }
     });
-  }
-
-  onFilter(table: TreeTable, name: string): void {
-    table.filter(this.filterValue, name, 'contains');
   }
 
   getNodeWithKey(key: string, nodes: TreeTableNode[]): TreeTableNode | undefined {
